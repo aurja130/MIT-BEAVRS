@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: BEAVRS
+Version: 0.2
+Summary: A package for building the BEAVRS PWR model
+Author: Nicholas Horelik
+Author-email: nhorelik@mit.edu
+Dynamic: author
+Dynamic: author-email
+Dynamic: summary

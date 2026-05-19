@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<tallies>
+  <filter id="9" type="universe">
+    <bins>0</bins>
+  </filter>
+  <filter id="10" type="energy">
+    <bins>0.0 20000000.0</bins>
+  </filter>
+  <tally id="33">
+    <filters>9 10</filters>
+    <nuclides>total</nuclides>
+    <scores>flux nu-fission inverse-velocity</scores>
+    <estimator>tracklength</estimator>
+  </tally>
+</tallies>

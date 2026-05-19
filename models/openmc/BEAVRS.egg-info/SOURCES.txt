@@ -1,0 +1,17 @@
+README.md
+setup.py
+BEAVRS.egg-info/PKG-INFO
+BEAVRS.egg-info/SOURCES.txt
+BEAVRS.egg-info/dependency_links.txt
+BEAVRS.egg-info/top_level.txt
+beavrs/__init__.py
+beavrs/assemblies.py
+beavrs/baffle.py
+beavrs/builder.py
+beavrs/constants.py
+beavrs/core.py
+beavrs/corebuilder.py
+beavrs/materials.py
+beavrs/pincells.py
+beavrs/plots.py
+beavrs/univzero.py

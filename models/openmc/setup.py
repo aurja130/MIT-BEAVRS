@@ -1,7 +1,9 @@
 __author__ = 'Nicholas Horelik'
 __email__ = 'nhorelik@mit.edu'
 
-from distutils.core import setup
+# from distutils.core import setup
+
+from setuptools import setup
 
 setup(name='BEAVRS',
       version='0.2',

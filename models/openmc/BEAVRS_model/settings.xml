@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<settings>
+  <run_mode>eigenvalue</run_mode>
+  <particles>2500</particles>
+  <batches>20</batches>
+  <inactive>5</inactive>
+  <source type="independent" strength="1.0" particle="neutron">
+    <space type="box">
+      <parameters>-161.2773 -161.2773 35.0 161.2773 161.2773 419.704</parameters>
+    </space>
+  </source>
+  <output>
+    <summary>true</summary>
+    <tallies>false</tallies>
+  </output>
+  <temperature_method>interpolation</temperature_method>
+</settings>
