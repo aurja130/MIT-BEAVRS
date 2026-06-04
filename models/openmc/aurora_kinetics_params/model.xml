@@ -177,7 +177,7 @@
       <nuclide name="C13" ao="2.9910599999999998e-06"/>
       <nuclide name="U235" ao="1e-08"/>
     </material>
-    <material id="10" name="Fuel 1.6%" depletable="true" temperature="2073.15">
+    <material id="10" name="Fuel 1.6%" depletable="true" temperature="1200.0">
       <density value="10.31341" units="g/cc"/>
       <nuclide name="O16" ao="1.9952411999999993"/>
       <nuclide name="O17" ao="0.0007579999999999998"/>
@@ -187,7 +187,7 @@
       <nuclide name="U238" ao="0.9834764409899418"/>
       <nuclide name="U236" ao="7.467631597592896e-05"/>
     </material>
-    <material id="11" name="Fuel 2.4%" depletable="true" temperature="2073.15">
+    <material id="11" name="Fuel 2.4%" depletable="true" temperature="1200.0">
       <density value="10.29748" units="g/cc"/>
       <nuclide name="O16" ao="1.9952411999999997"/>
       <nuclide name="O17" ao="0.0007579999999999999"/>
@@ -197,7 +197,7 @@
       <nuclide name="U238" ao="0.975372769202797"/>
       <nuclide name="U236" ao="0.00011129992439913113"/>
     </material>
-    <material id="12" name="Fuel 3.1%" depletable="true" temperature="2073.15">
+    <material id="12" name="Fuel 3.1%" depletable="true" temperature="1200.0">
       <density value="10.30166" units="g/cc"/>
       <nuclide name="O16" ao="1.9952412000000022"/>
       <nuclide name="O17" ao="0.0007580000000000009"/>
@@ -207,7 +207,7 @@
       <nuclide name="U238" ao="0.9681691224605644"/>
       <nuclide name="U236" ao="0.00014385597361192358"/>
     </material>
-    <material id="13" name="Fuel 3.2%" depletable="true" temperature="2073.15">
+    <material id="13" name="Fuel 3.2%" depletable="true" temperature="1200.0">
       <density value="10.34115" units="g/cc"/>
       <nuclide name="O16" ao="1.9952411999999984"/>
       <nuclide name="O17" ao="0.0007579999999999995"/>
@@ -217,7 +217,7 @@
       <nuclide name="U238" ao="0.9672126055031482"/>
       <nuclide name="U236" ao="0.00014817884149437345"/>
     </material>
-    <material id="14" name="Fuel 3.4%" depletable="true" temperature="2073.15">
+    <material id="14" name="Fuel 3.4%" depletable="true" temperature="1200.0">
       <density value="10.35917" units="g/cc"/>
       <nuclide name="O16" ao="1.9952412000000008"/>
       <nuclide name="O17" ao="0.0007580000000000003"/>
@@ -1784,7 +1784,7 @@
   <settings>
     <run_mode>eigenvalue</run_mode>
     <particles>2500</particles>
-    <batches>20</batches>
+    <batches>25</batches>
     <inactive>5</inactive>
     <source type="independent" strength="1.0" particle="neutron">
       <space type="box">
@@ -1798,47 +1798,58 @@
     <temperature_method>interpolation</temperature_method>
   </settings>
   <tallies>
-    <filter id="324" type="universe">
-      <bins>0</bins>
+    <mesh id="1">
+      <dimension>3 3 3</dimension>
+      <lower_left>-170.0 -170.0 -182.88</lower_left>
+      <upper_right>170.0 170.0 182.88</upper_right>
+    </mesh>
+    <filter id="47" type="mesh">
+      <bins>1</bins>
     </filter>
-    <filter id="325" type="energy">
-      <bins>0.0 1e+37</bins>
+    <filter id="48" type="energy">
+      <bins>0.0 0.625 20000000.0</bins>
     </filter>
-    <filter id="326" type="energyout">
-      <bins>0.0 1e+37</bins>
+    <filter id="49" type="energyout">
+      <bins>0.0 0.625 20000000.0</bins>
     </filter>
-    <filter id="327" type="legendre">
+    <filter id="50" type="legendre">
       <order>1</order>
     </filter>
-    <filter id="338" type="delayedgroup">
+    <filter id="65" type="delayedgroup">
       <bins>1 2 3 4 5 6 7 8</bins>
     </filter>
-    <tally id="917">
-      <filters>324 325</filters>
+    <tally id="157">
+      <filters>47 48</filters>
       <nuclides>total</nuclides>
-      <scores>flux total absorption scatter nu-fission inverse-velocity</scores>
+      <scores>flux total absorption nu-fission kappa-fission inverse-velocity</scores>
       <estimator>tracklength</estimator>
     </tally>
-    <tally id="896">
-      <filters>324 325</filters>
+    <tally id="150">
+      <filters>47 48</filters>
       <nuclides>total</nuclides>
       <scores>flux</scores>
       <estimator>analog</estimator>
     </tally>
-    <tally id="897">
-      <filters>324 326 327</filters>
+    <tally id="134">
+      <filters>47 49 50</filters>
       <nuclides>total</nuclides>
       <scores>scatter</scores>
       <estimator>analog</estimator>
     </tally>
-    <tally id="916">
-      <filters>324 338 325</filters>
+    <tally id="149">
+      <filters>47 48 49 50</filters>
+      <nuclides>total</nuclides>
+      <scores>nu-scatter</scores>
+      <estimator>analog</estimator>
+    </tally>
+    <tally id="156">
+      <filters>47 65 48</filters>
       <nuclides>total</nuclides>
       <scores>delayed-nu-fission</scores>
       <estimator>tracklength</estimator>
     </tally>
-    <tally id="920">
-      <filters>324 338</filters>
+    <tally id="160">
+      <filters>47 65</filters>
       <nuclides>total</nuclides>
       <scores>delayed-nu-fission decay-rate</scores>
       <estimator>tracklength</estimator>

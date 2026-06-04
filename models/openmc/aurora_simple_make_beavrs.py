@@ -2,10 +2,10 @@ import os
 from beavrs.builder import BEAVRS
 
 try:
-    os.mkdir('build')
+    os.mkdir('aurora_kinetics_params')
 except OSError:
     pass
-os.chdir('build')
+os.chdir('aurora_kinetics_params')
 
 model = BEAVRS()
 
